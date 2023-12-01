@@ -1,9 +1,16 @@
-import List from "./components/List";
+import Filter from "./components/Filter";
+import CountryCard from "./components/CountryCard";
 import './App.css'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 const App = () => {
-  return (<div>
-    <List />
-  </div>)
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<div><Filter /></div>} />
+        <Route path="/filter/:name" element={<CountryCard />} />
+      </Routes>
+    </BrowserRouter>
+  )
 
 }
 
