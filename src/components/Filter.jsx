@@ -21,8 +21,6 @@ const Filter = () => {
             .get("https://restcountries.com/v3.1/all")
             .then((res) => setData(res.data))
     }, [])
-
-
     return (
         <div className="global">
             <div className="filtre">
@@ -54,7 +52,7 @@ const Filter = () => {
                 {data
 
                     .filter((countrie) => countrie.continents[0].includes(selectedContinent))
-                    .filter((countrie) => countrie.translations.fra.common.toLowerCase().includes(search.toLowerCase()))
+                    .filter((countrie) => countrie.name.common.toLowerCase().includes(search.toLowerCase()))
                     .map((countrie, index) => (
                         <Card key={index} countrie={countrie} />
                     ))}
@@ -62,6 +60,4 @@ const Filter = () => {
         </div>
     )
 }
-
-
 export default Filter

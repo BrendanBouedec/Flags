@@ -5,14 +5,22 @@ import { Link, useParams } from 'react-router-dom';
 
 
 const CountryCard = () => {
-    const [data, setData] = useState([]);
+    const [country, setCountry] = useState([]);
     const { name } = useParams();
 
     useEffect(() => {
-        axios
-            .get("https://restcountries.com/v3.1/all")
-            .then((res) => setData(res.data))
-    }, [])
+        const fetchCountryData = async () => {
+            try {
+                const response = await fetch(`https://restcountries.com/v3.1/name/${name}`);
+                const data = await response.json();
+                setCountry(data[0]);
+            } catch (error) {
+                console.error('Error fetching country data:', error);
+            }
+        };
+
+        fetchCountryData();
+    }, [name]);
 
 
 
@@ -25,12 +33,21 @@ const CountryCard = () => {
             </div>
 
             <div className="info">
-                {data.map((countrie, index) => {
-                    <div className="infoG" key={index}>
-                        <h1>{countrie.translations.fra.common}</h1>
-                    </div>
 
-                })}
+                <ul>
+                    {/* <li><img src={country.flags.png} alt="Country flag" /></li> */}
+                    <li>Name : {name}</li>
+                    <li>Population : {country.population}</li>
+                    <li>Region : {country.region}</li>
+                    <li>Capital : {country.capital}</li>
+                    <li>Sub Region : {country.subregion}</li>
+                    <li>Top Level Domain : {country.tld}</li>
+
+                </ul>
+
+
+
+
             </div>
 
         </div>
