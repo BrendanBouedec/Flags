@@ -4,8 +4,8 @@ const Card = ({ countrie }) => {
     return (
         <div className='country'>
             <ul className='countries'>
-                <li>{countrie.name.common}</li>
                 <img src={countrie.flags.png} alt="Drapeau" />
+                <li className='nameCountry'>{countrie.name.common}</li>
                 <li>Population : {countrie.population}</li>
                 <li>Region : {countrie.continents}</li>
                 <li>Capital : {countrie.capital}</li>

@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from 'react'
 import { useEffect } from "react";
 import Card from "./Card";
+import Header from "./Header";
 
 
 const Filter = () => {
@@ -22,10 +23,12 @@ const Filter = () => {
             .then((res) => setData(res.data))
     }, [])
     return (
+
         <div className="global">
+            <Header />
             <div className="filtre">
-                <div className='searchBar'>
-                    <input type="text" onChange={handleSearch} name='searchBar' id='searchBar' placeholder='Rechercher un pays' />
+                <div className='search'>
+                    <input type="text" onChange={handleSearch} className="searchBar" name='searchBar' id='searchBar' placeholder='   Search for a country...' />
                 </div>
                 <div className="continent">
                     <select
@@ -35,7 +38,7 @@ const Filter = () => {
                         value={selectedContinent}
                         onChange={handleContinent}
                     >
-                        <option value="Filtrer par region">Filtrer par region</option>
+                        <option value="Filtrer par region">Filter by Region</option>
                         <option value="Africa">Africa</option>
                         <option value="America">America</option>
                         <option value="Asia">Asia</option>

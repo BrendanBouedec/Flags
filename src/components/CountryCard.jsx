@@ -42,12 +42,7 @@ const CountryCard = () => {
                     <li>Capital : {country.capital}</li>
                     <li>Sub Region : {country.subregion}</li>
                     <li>Top Level Domain : {country.tld}</li>
-
                 </ul>
-
-
-
-
             </div>
 
         </div>

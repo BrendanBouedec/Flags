@@ -1,8 +1,8 @@
 #root {
-  max-width: 1280px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  text-align: left;
+  background-color: rgb(26, 35, 64);
 }
 
 .logo {
@@ -54,6 +54,32 @@
 }
 
 .searchBar {
-  margin-left: 10em;
+  margin-left: 12em;
+  width: 18em;
+  height: 2em;
+  border: 2px solid blueviolet;
+  border-radius: 10px;
 }
 
+.nav {
+  background-color: rgb(67, 67, 113);
+  margin-bottom: 3em;
+  padding: 1em 0 1em 2em;
+
+}
+
+h1 {
+  margin: 0;
+}
+
+.select {
+  margin-left: 7em;
+  width: 12em;
+  height: 2.2em;
+  border: 2px solid blueviolet;
+  border-radius: 10px;
+}
+
+.nameCountry {
+  font-weight: bold;
+}
